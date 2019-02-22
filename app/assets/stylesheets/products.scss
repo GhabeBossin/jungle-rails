@@ -51,15 +51,29 @@ main section.categories-show {
         font-size: 0.8em;
       }
 
-      &:hover {
+      aside.sold-out {
+        color: #eee;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        border-top-left-radius: 4px;
+        border-bottom-right-radius: 20px;
+        font-size: 0.8em;
+        background-color: #eca2a2;
+        transition: all 0.3s;
+      }
 
+      &:hover {
         border-color: #999;
 
+        .sold-out {
+          background-color: #f33b3b;
+        }
         footer {
           opacity: 1.0;
         }
       }
-
     }
   }
 }
