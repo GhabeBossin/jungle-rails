@@ -12,9 +12,11 @@
  :user, url: '/users' 
 <%
 =end%>
-      <%= form_for(User.new) do |form| %>
+      <%= form_for :user, url: '/users' do |form| %>
 
-        <% if form.object.errors.any? %>
+        <%
+=begin%>
+ <% if form.object.errors.any? %>
           <div class="alert alert-danger">
             <strong>The following errors prevented saving:</strong>
             <ul>
@@ -23,7 +25,9 @@
               <% end %>
             </ul>
           </div>
-        <% end %>
+        <% end %> 
+<%
+=end%>
 
         <div class="form-group">
           <%= form.label :fname, 'First name:' %>
