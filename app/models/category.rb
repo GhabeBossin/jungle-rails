@@ -2,7 +2,7 @@ class Category < ActiveRecord::Base
 
   has_many :products
 
-  validates :name, presence: {strict: true},
+  validates :name, presence: true,
             uniqueness: true, on: :create
 
 end
