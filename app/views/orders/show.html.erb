@@ -18,8 +18,28 @@
             </tr>
           </thead>
           <tbody>
-            <% enhanced_cart.each do |item| %>
-              <%= render 'item', product: item[:product], quantity: item[:quantity].to_i %>
+            <% @order.line_items.each do |line_item| %>
+
+              <tr>
+                <td>
+                  <%= image_tag line_item.product.image.tiny %>
+                </td>
+                <td>
+                  <h4><%= line_item.product.name %></h4>
+                  <br>
+                  <p><%= line_item.product.description %></p>
+                </td>
+                <td>
+                  <%= line_item.product.price %>
+                </td>
+                <td>
+                  <%= line_item.quantity %>
+                </td>
+                <td>
+                  <%= line_item.product.price * line_item.quantity %>
+                </td>
+              </tr>
+
             <% end %>
           </tbody>
           <tfoot>
@@ -28,7 +48,7 @@
                 TOTAL:
               </th>
               <th>
-                <%= cart_subtotal_cents / 100.0 %>
+                <%= order_total_cents / 100.0 %>
               </th>
             </tr>
             <tr>

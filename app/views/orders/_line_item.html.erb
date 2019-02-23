@@ -1,3 +1,6 @@
+
+<%= render 'item', product: item[:product], quantity: item[:quantity].to_i %>
+
 <tr>
   <td>
     <%= image_tag product.image.tiny %>
@@ -11,9 +14,9 @@
     <%= product.price %>
   </td>
   <td>
-    <%= product.quantity %>
+    <%= quantity %>
   </td>
   <td>
-    <%= product.price * product.quantity %>
+    <%= product.price * quantity %>
   </td>
 </tr>
