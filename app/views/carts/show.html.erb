@@ -4,6 +4,12 @@
     <h1>My Cart</h1>
   </header>
 
+  <% if enhanced_cart.count < 1 %>
+
+    <h3>You don't seem to have anything in your cart. Would you like to <%= link_to 'Continue shopping ?', [:root] %></h3>
+
+  <% else %>
+
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -48,5 +54,7 @@
       <% end %>
     </div>
   </div>
+
+  <% end %>
 
 </section>
