@@ -47,10 +47,18 @@
 
     <div class="row review-row">
       <div class="col review-wrap">
-        <h3>Product Reviews: </h3>
+        <h4>Product Reviews: </h4>
         <div class="well">
-          <% @product.reviews.each do |review| %>
-            <%= render 'review', review: review, current_user: current_user %>
+          <% if @product.reviews.count == 0 %>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              This product hasn't been reviewed yet.
+            </li>
+          </ul>
+          <% else %>
+            <% @product.reviews.each do |review| %>
+              <%= render 'review', review: review, current_user: current_user %>
+            <% end %>
           <% end %>
         </div>
       </div>
