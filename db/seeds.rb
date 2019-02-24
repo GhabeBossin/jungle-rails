@@ -21,6 +21,17 @@ end
 
 # Let's do this ...
 
+## BASE USER
+
+puts "Creates imaginary user..."
+
+user = User.find_or_create_by!(
+  fname: 'Dog',
+  lname: 'Doggerson',
+  email: 'dog@dogs.com',
+  password_digest: 'dogdogdog'
+)
+
 ## CATEGORIES
 
 puts "Finding or Creating Categories ..."
@@ -130,6 +141,31 @@ cat3.products.create!({
   image: open_asset('furniture3.jpg'),
   quantity: 0,
   price: 2_483.75
+})
+
+## REVIEWS
+
+puts "Creates fake reviews..."
+
+Review.create!(
+  product_id: 1,
+  user_id: 1,
+  description: 'This is the best thing in the world!',
+  rating: 5
+)
+
+Review.create!({
+  product_id: 2,
+  user_id: 1,
+  description: 'Dogdogdogdogdoooog',
+  rating: 5
+})
+
+Review.create!({
+  product_id: 4,
+  user_id: 3,
+  description: 'Look at me leaving reviews!',
+  rating: 2
 })
 
 
