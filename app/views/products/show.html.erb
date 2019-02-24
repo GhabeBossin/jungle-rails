@@ -50,7 +50,7 @@
         <% if current_user %>
           <%= render 'form' %>
         <% else %>
-          <h5>Sign in to leave a review!</h5>
+          <%= button_to "Sign in to leave a review", '/login', class: 'btn btn-primary' %>
         <% end %>
         <h4>Product Reviews: </h4>
         <div class="well">
