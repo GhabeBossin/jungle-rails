@@ -1,0 +1,15 @@
+
+Order confirmation:
+====================================
+
+You have successfully completed your order. These items will be shipped to you promptly.
+
+  <% @order.line_items.each do |line_item| %>
+    <%= line_item.product.name %>
+    <%= line_item.product.description %>
+    <%= line_item.quantity %>
+  <% end %>
+
+Your total:<%= (@order.total_cents / 100.0).to_s %>
+
+Thanks for shopping at Jungle.com
