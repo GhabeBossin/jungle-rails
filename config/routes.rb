@@ -9,8 +9,11 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  resources :products, only: [:index, :show]
   resources :categories, only: [:show]
+
+  resources :products, only: [:index, :show] do
+    resources :reviews, only: [:create, :destroy]
+  end
 
   resource :cart, only: [:show] do
     post   :add_item

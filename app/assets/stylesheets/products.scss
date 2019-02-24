@@ -91,14 +91,14 @@ main section.products-show {
 
     .well {
       display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
+      flex-direction: column;
 
       .review-col {
         margin: .5em;
 
         .card {
-          width: 30rem;
+          width: 100%;
+          overflow-wrap: break-word;
         }
       }
     }
