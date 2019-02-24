@@ -168,5 +168,33 @@ Review.create!({
   rating: 2
 })
 
+Review.create!({
+  product_id: 4,
+  user_id: 1,
+  description: 'Loved this product.',
+  rating: 5
+})
+Review.create!({
+  product_id: 4,
+  user_id: 4,
+  description: "I'm leaving a ridiculously long review for the sake of formatting. I'm leaving a ridiculously long review for the sake of formatting. I'm leaving a ridiculously long review for the sake of formatting.",
+  rating: 4
+})
+
+Review.create!({
+  product_id: 4,
+  user_id: 4,
+  description: 'BOO0000oooo0000oo0o0o0o 💩💩💩💩💩💩💩💩💩💩',
+  rating: 1
+})
+
+Review.create!({
+  product_id: 4,
+  user_id: 2,
+  description: 'My grandson loves wearing these socks when he rides his penny-farthing.',
+  rating: 4
+})
+
+
 
 puts "DONE!"

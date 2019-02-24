@@ -1,14 +1,21 @@
-<div class="review-flex">
+
+<div class="col review-col">
   <div class="card">
     <div class="card-body">
-      <h4 class="card-title">Review:</h4>
-      <p class="card-text">
-        <strong>Description: </strong>
-        <%= review.description %>
-      </p>
-      <p class="card-text">
-        <strong>Rated: </strong><%= review.rating %>/5
-      </p>
+
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <strong>User review: </strong>
+        </li>
+        <li class="list-group-item">
+          <%= review.description %>
+        </li>
+        <li class="list-group-item">
+          <strong>Rated: </strong>
+          <%= review.rating %>/5
+        </li>
+      </ul>
+
     </div>
   </div>
 </div>

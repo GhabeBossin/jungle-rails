@@ -45,16 +45,15 @@
       </div>
     </div>
 
-    <div class="row">
-
-      <dl class="dl-horizontal">
-        <dd>
+    <div class="row review-row">
+      <div class="col review-wrap">
+        <h3>Product Reviews: </h3>
+        <div class="well">
           <% @product.reviews.each do |review| %>
-          <%= render 'review', review: review, current_user: current_user %>
+            <%= render 'review', review: review, current_user: current_user %>
           <% end %>
-        </dd>
-      </dl>
-
+        </div>
+      </div>
     </div>
 
   </article>
