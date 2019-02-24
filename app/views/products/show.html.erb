@@ -47,6 +47,11 @@
 
     <div class="row review-row">
       <div class="col review-wrap">
+        <% if current_user %>
+          <%= render 'form' %>
+        <% else %>
+          <h5>Sign in to leave a review!</h5>
+        <% end %>
         <h4>Product Reviews: </h4>
         <div class="well">
           <% if @product.reviews.count == 0 %>
