@@ -1,6 +1,30 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2 for purposes of learning Rails at Lighthouse Labs, week 7.
+
+## Features
+
+* Sold out badge on out of stock products
+* Users can register and login/out
+* If cart is empty, user is prompted with an option to continue shopping.
+* Logged in users can rate and review products, and delete reviews they posted.
+* Shows order confirmation on purchase
+* Email order reciept
+* Admin authentication
+* Administrators can add new categories
+
+## Examples
+
+![home signed out](public/home_signed_out.png)
+![home signed in](public/home_signed_in.png)
+![login](public/login.png)
+![register](public/register.png)
+![review form](public/review.png)
+![reviewloggedout](public/loggedout_review.png)
+![auth](public/auth.png)
+![categories](public/categories.png)
+![add categories](public/add_categories.png)
+
 
 
 ## Setup

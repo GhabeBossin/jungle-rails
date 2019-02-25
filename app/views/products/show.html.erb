@@ -62,7 +62,7 @@
           </ul>
           <% else %>
             <% @product.reviews.each do |review| %>
-              <%= render 'review', review: review, current_user: current_user %>
+              <%= render 'review', review: review, current_user: current_user  %>
             <% end %>
           <% end %>
         </div>
