@@ -8,11 +8,8 @@ main section.categories-show {
     justify-content: space-around;
 
     .product {
-      // flex:      1;
       max-width: 260px;
-      // so that footer within can be positioned absolutely
       position:  relative;
-
       border:        1px solid #ccc;
       border-radius: 5px;
       padding:       15px;
@@ -96,9 +93,6 @@ main section.products-show {
       .review-col {
         margin: .5em;
 
-        .list-group {
-          overflow-wrap: break-word;
-        }
       }
     }
   }

@@ -18,8 +18,21 @@ form.button_to {
 
 .list-group {
   margin: .5em 0;
+  overflow-wrap: break-word;
+
 }
 
 textarea {
   resize:vertical;
+}
+
+
+li.greeting {
+  color: #333333;
+  margin: 15px;
+}
+
+
+.del-btn {
+  float: right;
 }

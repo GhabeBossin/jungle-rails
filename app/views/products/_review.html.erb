@@ -2,7 +2,10 @@
 
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
-        <strong>User review: </strong>
+        <strong>User review from <%= review.user.fname%>: </strong>
+        <% if current_user == review.user %>
+        <%= link_to fa_icon('trash'), product_review_path(:review_id => review.id, :id => review.product_id, :product_id => review.product_id), class: 'btn btn-xs btn-danger del-btn', method: :delete %>
+        <% end %>
     </li>
     <li class="list-group-item">
       <%= review.description %>
