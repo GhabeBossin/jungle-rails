@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
-  # pending "add some examples to (or delete) #{__FILE__}"
 
   # describe 'Associations' do
   #   it 'belongs to category' do
@@ -19,12 +18,6 @@ RSpec.describe Product, type: :model do
         quantity: 47,
         category: @category
       )
-      # expect(Product.new(
-      #   name: 'red bookshelf',
-      #   price: 347.99,
-      #   quantity: 47,
-      #   category: @category
-      # )).to be_valid
       expect(@product).to be_valid
       expect(@product.errors.full_messages).to be_empty
     end
