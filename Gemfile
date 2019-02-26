@@ -57,10 +57,11 @@ end
 
 group :test do
   # ...more stuff here
+  gem 'capybara'
+  gem 'poltergeist'
   gem 'factory_bot_rails'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
-  # gem 'faker'
 end
 
 group :production do
