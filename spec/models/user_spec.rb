@@ -86,10 +86,16 @@ RSpec.describe User, type: :model do
         password_confirmation: 'bone-sniffer'
       )
       @user.save!
+      @user2 = User.new(
+        fname: 'Doggo',
+        lname: 'Doggerson',
+        email: ' dig.Dog@gmail.com',
+        password: 'bone-sniffer',
+        password_confirmation: 'bone-sniffer'
+      )
+      @user2.save!
       expect(User.authenticate_with_credentials(@user.email, @user.password)).to be_truthy
-      # subject.email = 'hot.dog@gmail.com'
-      # subject.password = 'some_password'
-      # expect(User.authenticate_with_credentials(subject.email, subject.password)).to be_instance_of(User)
+      expect(User.authenticate_with_credentials(@user2.email, @user2.password)).to be_truthy
     end
 
     it 'is not valid if not successfully authenticated' do
