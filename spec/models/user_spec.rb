@@ -86,6 +86,7 @@ RSpec.describe User, type: :model do
         password_confirmation: 'bone-sniffer'
       )
       @user.save!
+
       @user2 = User.new(
         fname: 'Doggo',
         lname: 'Doggerson',
@@ -94,6 +95,7 @@ RSpec.describe User, type: :model do
         password_confirmation: 'bone-sniffer'
       )
       @user2.save!
+
       expect(User.authenticate_with_credentials(@user.email, @user.password)).to be_truthy
       expect(User.authenticate_with_credentials(@user2.email, @user2.password)).to be_truthy
     end
