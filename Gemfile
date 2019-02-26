@@ -55,6 +55,14 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  # ...more stuff here
+  gem 'factory_bot_rails'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
+  # gem 'faker'
+end
+
 group :production do
   gem 'newrelic_rpm'
   gem 'rails_12factor'
