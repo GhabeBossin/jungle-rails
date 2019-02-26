@@ -21,19 +21,6 @@ end
 
 # Let's do this ...
 
-## BASE USER
-
-puts "Creates imaginary user..."
-
-user = User.find_or_create_by!(
-  id: 2,
-  fname: 'Dog',
-  lname: 'Doggerson',
-  email: 'dog@dogs.com',
-  password_digest: 'dogdogdog',
-  password_confirmation: 'dogdogdog'
-)
-
 ## CATEGORIES
 
 puts "Finding or Creating Categories ..."
@@ -147,7 +134,7 @@ cat3.products.create!({
 
 ## REVIEWS
 
-puts "Creates fake reviews..."
+puts "Creating fake reviews..."
 
 Review.create!(
   product_id: 1,
