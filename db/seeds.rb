@@ -26,10 +26,12 @@ end
 puts "Creates imaginary user..."
 
 user = User.find_or_create_by!(
+  id: 2,
   fname: 'Dog',
   lname: 'Doggerson',
   email: 'dog@dogs.com',
-  password_digest: 'dogdogdog'
+  password_digest: 'dogdogdog',
+  password_confirmation: 'dogdogdog'
 )
 
 ## CATEGORIES
