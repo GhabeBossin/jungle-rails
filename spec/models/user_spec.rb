@@ -5,9 +5,9 @@ RSpec.describe User, type: :model do
 
   subject {
     described_class.new(
-      fname: 'Ghabe',
-      lname: 'Bossin',
-      email: 'gee.bossin@gmail.com',
+      fname: 'Corgo',
+      lname: 'Doggerson',
+      email: 'hot.dog@gmail.com',
       password: 'some_password',
       password_confirmation: 'some_password'
     )
@@ -68,10 +68,36 @@ RSpec.describe User, type: :model do
       subject.password = 'cat12'
       expect(subject).to_not be_valid
     end
+
     #email validity
 
     it { should validate_uniqueness_of(:email).ignoring_case_sensitivity }
+  end
+
+  # user validation
+
+  describe '.authenticate_with_credentials' do
+    it 'is valid instance of the user if successfully authenticated' do
+      @user = User.new(
+        fname: 'Doggo',
+        lname: 'Doggerson',
+        email: 'dig.dog@gmail.com',
+        password: 'bone-sniffer',
+        password_confirmation: 'bone-sniffer'
+      )
+      @user.save!
+      expect(User.authenticate_with_credentials(@user.email, @user.password)).to be_truthy
+      # subject.email = 'hot.dog@gmail.com'
+      # subject.password = 'some_password'
+      # expect(User.authenticate_with_credentials(subject.email, subject.password)).to be_instance_of(User)
+    end
+
+    it 'is not valid if not successfully authenticated' do
+      expect(User.authenticate_with_credentials(subject.email, 's0me-p4ssword')).to be nil
+      expect(User.authenticate_with_credentials('fat.cat@gmail.com', subject.password)).to be nil
+    end
 
   end
+
 
 end
